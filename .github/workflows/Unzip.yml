@@ -1,0 +1,28 @@
+name: Unzip
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  unzip:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Unzip
+        run: |
+          zipfile=$(find . -maxdepth 1 -name "*.zip" | head -n 1)
+          if [ -z "$zipfile" ]; then
+            echo "No zip file found in repo root"; exit 1
+          fi
+          unzip -o "$zipfile"
+          rm "$zipfile"
+          rm -rf __MACOSX
+      - name: Commit
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet && echo "Nothing to commit" && exit 0
+          git commit -m "Unzip project"
+          git push
+          
