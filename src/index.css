@@ -1,0 +1,382 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.never-match-dark));
+
+@layer base {
+  :root {
+    --bg-main: #EDEEF2;
+    --bg-card: #FFFFFF;
+    --border-card: #D4D0E0;
+    --text-main: #1F1A2E;
+    --text-muted: #666079;
+    --primary: #5F2967;
+    --primary-light: #F1E8F4;
+
+    /* Calm Accent Colors */
+    --accent-gold: #B7791F;
+    --accent-gold-light: #FBF1DE;
+    --accent-green: #2F7F5F;
+    --accent-green-light: #E3F2EA;
+    --accent-blue: #3D6A8F;
+    --accent-blue-light: #E4EDF5;
+    --accent-burgundy: #A23B5A;
+    --accent-burgundy-light: #F8E6EC;
+  }
+
+  .dark {
+    --bg-main: #14101B;
+    --bg-card: #211A2D;
+    --border-card: #3A3150;
+    --text-main: #F4F0FA;
+    --text-muted: #9E97B0;
+    --primary: #8A5C93;
+    --primary-light: #2D1F35;
+
+    --accent-gold: #D4983D;
+    --accent-gold-light: #332616;
+    --accent-green: #4BA682;
+    --accent-green-light: #162E23;
+    --accent-blue: #5C8FB8;
+    --accent-blue-light: #1A2836;
+    --accent-burgundy: #C9587A;
+    --accent-burgundy-light: #381B26;
+  }
+
+  * {
+    font-family: 'Cairo', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Reusable Design Tokens for Card Type A and Type B */
+.card-stat {
+  background-color: #FFFFFF;
+  border-radius: 18px;
+  border: 1.5px solid #D4D0E0;
+  box-shadow: 0 6px 18px rgba(43, 35, 64, 0.12), 0 1px 3px rgba(43, 35, 64, 0.10);
+  transition: all 0.2s ease;
+}
+
+.dark .card-stat {
+  background-color: #211A2D;
+  border: 1.5px solid #3A3150;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45), 0 1px 3px rgba(0, 0, 0, 0.35);
+}
+
+.card-hero {
+  background-color: #5F2967;
+  color: #FFFFFF;
+  border-radius: 18px;
+  border: 1.5px solid #4A1E52;
+  box-shadow: 0 8px 24px rgba(95, 41, 103, 0.32), 0 2px 6px rgba(95, 41, 103, 0.20);
+}
+
+.card-regular {
+  background-color: #FFFFFF;
+  border-radius: 18px;
+  border: 1.5px solid #D4D0E0;
+  box-shadow: 0 4px 14px rgba(43, 35, 64, 0.08), 0 1px 2px rgba(43, 35, 64, 0.06);
+  transition: all 0.2s ease;
+}
+
+.dark .card-regular {
+  background-color: #211A2D;
+  border: 1.5px solid #3A3150;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35), 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.salary-expense-card {
+  background-color: #FFFFFF;
+  border-radius: 18px;
+  border: 1.5px solid #D4D0E0;
+  box-shadow: 0 4px 14px rgba(43, 35, 64, 0.08), 0 1px 2px rgba(43, 35, 64, 0.06);
+  transition: all 0.2s ease;
+}
+
+.dark .salary-expense-card {
+  background-color: #211A2D;
+  border: 1.5px solid #3A3150;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35), 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+/* 5px Accent Stripe on the Right Edge (RTL) */
+.stripe-gold {
+  border-right-width: 5px !important;
+  border-right-color: #B7791F !important;
+}
+
+.stripe-green {
+  border-right-width: 5px !important;
+  border-right-color: #2F7F5F !important;
+}
+
+.stripe-blue {
+  border-right-width: 5px !important;
+  border-right-color: #3D6A8F !important;
+}
+
+.stripe-burgundy {
+  border-right-width: 5px !important;
+  border-right-color: #A23B5A !important;
+}
+
+.stripe-purple {
+  border-right-width: 5px !important;
+  border-right-color: #5F2967 !important;
+}
+
+/* Button & Input Standards */
+.btn-primary {
+  background-color: #5F2967;
+  color: #FFFFFF;
+  border-radius: 14px;
+  font-weight: 700;
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #4A1E52;
+}
+
+.btn-primary:active {
+  transform: scale(0.97);
+}
+
+.btn-secondary {
+  background-color: #FFFFFF;
+  color: #5F2967;
+  border: 1.5px solid #5F2967;
+  border-radius: 14px;
+  font-weight: 700;
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+
+.dark .btn-secondary {
+  background-color: #211A2D;
+  color: #D8B4FE;
+  border-color: #8A5C93;
+}
+
+.btn-secondary:hover {
+  background-color: #F1E8F4;
+}
+
+.dark .btn-secondary:hover {
+  background-color: #2D1F35;
+}
+
+.input-field {
+  background-color: #FFFFFF;
+  border-radius: 14px;
+  border: 1.5px solid #D4D0E0;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.dark .input-field {
+  background-color: #211A2D;
+  border-color: #3A3150;
+  color: #F4F0FA;
+}
+
+.input-field:focus {
+  border-color: #5F2967;
+  box-shadow: 0 0 0 2px rgba(95, 41, 103, 0.15);
+}
+
+/* ========================================================
+   Unified Design Tokens & Standards ("العمار ستور")
+   ======================================================== */
+
+/* 1) Card Standards */
+.card-main {
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  border: 0;
+  box-shadow: 0 4px 14px rgba(43, 35, 64, 0.10);
+}
+
+.dark .card-main {
+  background-color: #211A2D;
+  border: 0;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.40);
+}
+
+.card-inner {
+  background-color: #F5F4F9;
+  border-radius: 14px;
+  border: 1px solid #D4D0E0;
+  padding: 8px 10px;
+}
+
+.dark .card-inner {
+  background-color: #1A1424;
+  border: 1px solid #3A3150;
+}
+
+.card-purple {
+  background-color: #5F2967;
+  color: #FFFFFF;
+  border-radius: 20px;
+  border: 0;
+  box-shadow: 0 4px 14px rgba(43, 35, 64, 0.10);
+}
+
+.dark .card-purple {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.40);
+}
+
+/* 2) Top Header Card (Purple Gradient) */
+.card-header-purple {
+  height: 52px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background: linear-gradient(to left, #6B2D7A, #5F2967);
+  color: #FFFFFF;
+  border-radius: 20px;
+  border: 0;
+  box-shadow: 0 6px 16px rgba(95, 41, 103, 0.28);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* 3) Header White Pill Button */
+.btn-header-white-pill {
+  height: 32px;
+  padding-left: 14px;
+  padding-right: 14px;
+  background-color: #FFFFFF;
+  color: #5F2967;
+  border-radius: 9999px;
+  font-size: 13px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.btn-header-white-pill:active {
+  transform: scale(0.95);
+}
+
+/* 4) Back Transparent Button */
+.btn-back-transparent {
+  width: 32px;
+  height: 32px;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.18);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.btn-back-transparent:active {
+  transform: scale(0.95);
+}
+
+/* 5) Green Teal Hero Card */
+.card-hero-teal {
+  background: linear-gradient(to left, #2DB5A8, #2E8A82);
+  color: #FFFFFF;
+  border-radius: 20px;
+  border: 0;
+  box-shadow: 0 6px 16px rgba(46, 138, 130, 0.28);
+}
+
+/* 6) Accordion Header */
+.accordion-header {
+  height: 50px;
+  padding-left: 15px;
+  padding-right: 15px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* 7) Dashed Add Button */
+.btn-add-dashed {
+  height: 34px;
+  border: 1.5px dashed #D4D0E0;
+  border-radius: 14px;
+  font-size: 12px;
+  font-weight: 800;
+  color: #5F2967;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 100%;
+  background: transparent;
+}
+
+.dark .btn-add-dashed {
+  border-color: #3A3150;
+  color: #D8B4FE;
+}
+
+.btn-add-dashed:active {
+  transform: scale(0.98);
+}
+
+/* 8) Capsule Input */
+.input-capsule {
+  height: 34px;
+  border-radius: 9999px;
+  background-color: #FFFFFF;
+  border: 1px solid #D4D0E0;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 800;
+  outline: none;
+}
+
+.dark .input-capsule {
+  background-color: #211A2D;
+  border-color: #3A3150;
+  color: #F4F0FA;
+}
+
+.input-capsule:focus {
+  border-color: #5F2967;
+}
+
+/* 9) Divider Line */
+.divider-line {
+  height: 1px;
+  background-color: #E4E1EC;
+  border: 0;
+}
+
+.dark .divider-line {
+  background-color: #3A3150;
+}
+
+html, body, #root {
+  direction: rtl;
+}
+
+/* 10) Order Grid layout with unified columns */
+.order-grid {
+  display: grid;
+  grid-template-columns: 20px minmax(0, 1fr) 58px 58px 58px 12px;
+  column-gap: 5px;
+  direction: rtl;
+  align-items: center;
+}

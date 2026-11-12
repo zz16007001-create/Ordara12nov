@@ -1,0 +1,33 @@
+{
+  "name": "العمار ستور",
+  "short_name": "العمار ستور",
+  "description": "نظام مالي متكامل وتجارة الأوردرات لإدارة الخزن الأربعة، العهدة، والمكاتب مع إدخال مركزي ومطابقة الشنطة.",
+  "lang": "ar",
+  "dir": "rtl",
+  "display": "standalone",
+  "orientation": "portrait",
+  "start_url": "./",
+  "scope": "./",
+  "background_color": "#5F2967",
+  "theme_color": "#5F2967",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

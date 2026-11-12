@@ -1,0 +1,193 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Background plum gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6E3478" />
+      <stop offset="50%" stop-color="#5F2967" />
+      <stop offset="100%" stop-color="#3A1342" />
+    </linearGradient>
+
+    <!-- Radial ambient glow behind emblem -->
+    <radialGradient id="ambientGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#A855F7" stop-opacity="0.35" />
+      <stop offset="60%" stop-color="#8A5C93" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#5F2967" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Bag Golden-Orange 3D Clay Gradient -->
+    <linearGradient id="bagGrad" x1="15%" y1="0%" x2="85%" y2="100%">
+      <stop offset="0%" stop-color="#FFC857" />
+      <stop offset="45%" stop-color="#F5A623" />
+      <stop offset="100%" stop-color="#E8891A" />
+    </linearGradient>
+
+    <!-- Bag Handle Cream Gradient -->
+    <linearGradient id="handleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#FDE68A" />
+    </linearGradient>
+
+    <!-- Golden Ring Gradient -->
+    <linearGradient id="goldRing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FEF08A" />
+      <stop offset="60%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#B45309" />
+    </linearGradient>
+
+    <!-- Sneaker Upper Cream-White Gradient -->
+    <linearGradient id="shoeUpper" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="60%" stop-color="#F8FAFC" />
+      <stop offset="100%" stop-color="#E9E3F1" />
+    </linearGradient>
+
+    <!-- Sneaker Chunky Sole Gradient -->
+    <linearGradient id="soleGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="35%" stop-color="#FFFBEB" />
+      <stop offset="70%" stop-color="#F5A623" />
+      <stop offset="100%" stop-color="#D97706" />
+    </linearGradient>
+
+    <!-- Emerald Accent Gradient -->
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4ADE80" />
+      <stop offset="100%" stop-color="#2FA36B" />
+    </linearGradient>
+
+    <!-- Soft Drop Shadow Filter -->
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#1A0720" flood-opacity="0.45" />
+    </filter>
+    <filter id="shoeShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#1A0720" flood-opacity="0.4" />
+    </filter>
+  </defs>
+
+  <!-- 1. Background with 22% rounded corners for desktop browser tabs -->
+  <rect width="512" height="512" rx="112" fill="url(#bgGrad)" />
+
+  <!-- 2. Ambient radial glow -->
+  <circle cx="256" cy="260" r="190" fill="url(#ambientGlow)" />
+
+  <!-- Ground Oval Shadow beneath both items -->
+  <ellipse cx="266" cy="396" rx="155" ry="24" fill="#1A0720" opacity="0.45" />
+
+  <!-- ========================================================= -->
+  <!-- 3. THE 3D BAG (Back-Right, ~x=210..395, y=140..375)      -->
+  <!-- ========================================================= -->
+  <g filter="url(#softShadow)">
+    <!-- Bag Handle Arch -->
+    <path
+      d="M 264 210 C 264 125 346 125 346 210"
+      stroke="url(#handleGrad)"
+      stroke-width="18"
+      stroke-linecap="round"
+      fill="none"
+    />
+    <!-- Golden Attachment Rings -->
+    <circle cx="264" cy="208" r="10" fill="url(#goldRing)" />
+    <circle cx="264" cy="208" r="4.5" fill="#78350F" />
+    <circle cx="346" cy="208" r="10" fill="url(#goldRing)" />
+    <circle cx="346" cy="208" r="4.5" fill="#78350F" />
+
+    <!-- Bag Main 3D Clay Body -->
+    <path
+      d="M 230 205 C 230 192 240 185 254 185 L 356 185 C 370 185 380 192 380 205 L 396 355 C 398 370 388 380 372 380 L 238 380 C 222 380 212 370 214 355 Z"
+      fill="url(#bagGrad)"
+    />
+
+    <!-- Bag Top Rim / Fold with inner shadow -->
+    <path
+      d="M 230 205 C 230 195 240 190 254 190 L 356 190 C 370 190 380 195 380 205 L 382 225 C 382 230 376 235 368 235 L 242 235 C 234 235 228 230 228 225 Z"
+      fill="#E8891A"
+      opacity="0.85"
+    />
+
+    <!-- Specular Highlight Curve on Top-Left of Bag -->
+    <path
+      d="M 242 200 C 255 194 300 192 340 194"
+      stroke="#FFFFFF"
+      stroke-width="4.5"
+      stroke-linecap="round"
+      opacity="0.65"
+    />
+    <path
+      d="M 234 245 C 230 280 228 320 232 355"
+      stroke="#FFFFFF"
+      stroke-width="3.5"
+      stroke-linecap="round"
+      opacity="0.4"
+    />
+
+    <!-- Bag Front Pocket Detail -->
+    <rect x="250" y="255" width="110" height="85" rx="14" fill="#E8891A" opacity="0.4" />
+    <rect x="252" y="253" width="106" height="83" rx="12" fill="none" stroke="#FDE68A" stroke-width="1.8" stroke-dasharray="5 3" opacity="0.6" />
+  </g>
+
+  <!-- ========================================================= -->
+  <!-- 4. THE 3D SNEAKER SHOE (Front-Left, ~x=115..325, y=255..395) -->
+  <!-- ========================================================= -->
+  <g filter="url(#shoeShadow)">
+    <!-- Sneaker Shadow on Bag -->
+    <ellipse cx="230" cy="385" rx="85" ry="16" fill="#1A0720" opacity="0.35" />
+
+    <!-- Sneaker Upper Body (curved ergonomic shoe profile) -->
+    <!-- Heel counter -> Collar -> Tongue -> Eyestay -> Toe box -> Midsole line -->
+    <path
+      d="M 125 330 C 122 300 128 275 142 268 C 154 262 168 275 180 285 L 210 270 C 220 265 230 270 236 280 L 255 315 C 275 320 305 330 318 344 C 326 352 322 364 310 366 L 132 366 C 126 366 124 345 125 330 Z"
+      fill="url(#shoeUpper)"
+    />
+
+    <!-- Emerald Green Heel Accent (#2FA36B) -->
+    <path
+      d="M 125 330 C 123 305 130 285 142 272 C 148 285 152 320 150 355 L 130 355 C 126 348 125 338 125 330 Z"
+      fill="url(#emeraldGrad)"
+    />
+    <circle cx="138" cy="285" r="3.5" fill="#FFFFFF" opacity="0.8" />
+
+    <!-- Dynamic Emerald Side Stripe / Swoosh badge -->
+    <path
+      d="M 172 328 C 195 312 230 315 258 335 C 235 338 200 336 172 328 Z"
+      fill="url(#emeraldGrad)"
+    />
+
+    <!-- Tongue -->
+    <path
+      d="M 188 275 C 196 260 212 260 218 272 L 225 292 C 215 290 198 285 188 275 Z"
+      fill="#E9E3F1"
+    />
+
+    <!-- 3D Puffy Shoe Laces (Criss-Cross in Cream/White) -->
+    <rect x="195" y="280" width="24" height="5.5" rx="2.5" fill="#FFFFFF" filter="drop-shadow(0 2px 2px rgba(0,0,0,0.15))" transform="rotate(-15 195 280)" />
+    <rect x="206" y="294" width="26" height="5.5" rx="2.5" fill="#FFFFFF" filter="drop-shadow(0 2px 2px rgba(0,0,0,0.15))" transform="rotate(-12 206 294)" />
+    <rect x="220" y="308" width="28" height="5.5" rx="2.5" fill="#FFFFFF" filter="drop-shadow(0 2px 2px rgba(0,0,0,0.15))" transform="rotate(-8 220 308)" />
+
+    <!-- Toe Cap 3D Overlay with Specular Glow -->
+    <path
+      d="M 270 338 C 285 332 308 340 318 348 C 322 355 318 364 306 366 L 265 366 C 265 352 266 342 270 338 Z"
+      fill="#FFFFFF"
+      opacity="0.95"
+    />
+    <ellipse cx="295" cy="344" rx="14" ry="4" fill="#FFFFFF" opacity="0.8" transform="rotate(-10 295 344)" />
+
+    <!-- Chunky Dual-Layer Sole (Platform Sneaker Sole) -->
+    <!-- Top sole layer (Cushion Cream) -->
+    <path
+      d="M 122 364 L 314 364 C 322 364 326 370 322 376 L 318 382 C 314 386 308 388 300 388 L 128 388 C 120 388 116 382 116 376 L 118 370 C 118 366 120 364 122 364 Z"
+      fill="url(#soleGrad)"
+    />
+
+    <!-- Dark Contrast Tread Stripe (#4A1E52 / #1A0720) -->
+    <rect x="124" y="373" width="194" height="3" rx="1.5" fill="#4A1E52" opacity="0.75" />
+
+    <!-- Bottom Grippy Lug Outsole Tread Pattern -->
+    <path
+      d="M 132 388 L 140 392 L 148 388 L 156 392 L 164 388 L 172 392 L 180 388 L 240 388 L 248 392 L 256 388 L 264 392 L 272 388 L 280 392 L 288 388 L 296 392 L 302 388"
+      stroke="#D97706"
+      stroke-width="2"
+      fill="none"
+      stroke-linecap="round"
+    />
+  </g>
+</svg>
